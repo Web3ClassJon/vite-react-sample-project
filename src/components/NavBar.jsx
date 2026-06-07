@@ -10,6 +10,8 @@ const NavBar = () => {
       <NavLink to="/contact">Contact</NavLink>
       {" "}
       <NavLink to="/sports">Sports</NavLink>
+      {" "}
+      <NavLink to="/books">Books</NavLink>
 
     </nav>
   )
