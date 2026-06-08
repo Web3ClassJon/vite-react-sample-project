@@ -4,10 +4,30 @@ import Footer from "../components/Footer"
 import MainLayout from "./MainLayout"
 import { useState } from "react"
 import Modal from "../components/Modal"
+import DropDown from "../components/DropDown"
+
+
+const sampleOptions = [
+  {value:1, text:"Some Option"},
+  {value:2, text:"Some Other Options"}
+];
+
+const artists =[
+  {"id": 1, "name": "AC/DC"},
+  {"id": 2, "name": "The Beatles"}
+]
+
+const artistOptions = artists.map(artist => ({value: artist.id, text: artist.name}))
+
 
 const HomePage = () => {
 
   const [showModal, setShowModal] = useState(false);
+
+
+  const handleSampleOptionSelected = (selectedValue) => {
+    console.log("Value selected:", selectedValue);
+  }
 
   return (
     <MainLayout>
@@ -25,6 +45,8 @@ const HomePage = () => {
           Toggle Modal
       </button>
 
+      <DropDown options={sampleOptions} onOptionsSelected={handleSampleOptionSelected} selectedValue={2} />
+      <DropDown options={artistOptions} onOptionsSelected={(value) => {console.log(value)}} selectedValue={"1"} />
     </MainLayout>
   )
 }
