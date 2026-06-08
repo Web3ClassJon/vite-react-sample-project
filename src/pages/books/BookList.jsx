@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { getAllBooks } from '../../api/book-data-access';
 import BookListItem from './BookListItem';
+import { Link } from 'react-router-dom';
 
 function BookList() {  
 
@@ -14,6 +15,7 @@ function BookList() {
   return (
     <>
         <h2>Book List</h2>
+        <Link to="/books/add">Add Book</Link>
         <ul>
             {books.map((b) => {return <BookListItem key={b.id} book={b} />})}
         </ul>

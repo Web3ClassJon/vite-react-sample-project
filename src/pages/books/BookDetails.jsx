@@ -10,7 +10,7 @@ const BookDetails = () => {
     const [book, setBook] = useState({id:0, title:"", author:""});
 
     useEffect(() => {
-        if(book){
+        if(bookId){
             getBookById(bookId).then(book => {return setBook(book)});
         }
     }, [bookId])
